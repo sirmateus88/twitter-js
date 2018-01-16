@@ -11,11 +11,17 @@
       <b>Your Name</b><br>
       100 followers
     </div>
-    <div class="col-md-9">
+    <div class="col-md-9 list-group">
 
       <!-- display tweets here -->
       {% for tweet in tweets %}
-        <li>{{tweet.content}}</li>
+        <li class="list-group-item">
+          <div class="row">
+            <img class='col-md-4 profile-img' src="https://pbs.twimg.com/profile_images/2450268678/olxp11gnt09no2y2wpsh_normal.jpeg">
+            <h4 class='col-md-6'>{{tweet.name}}</h4>
+          </div>
+          <div class='tweet'>{{tweet.content}}</div>
+        </li>
       {% endfor %}
 
     </div>

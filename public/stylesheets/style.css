@@ -57,3 +57,13 @@ code {
 .content .by {
   font-weight: bold;
 }
+
+.profile-img {
+  height: 48px;
+  width: 48px;
+  padding: 0;
+}
+
+.tweet{
+  padding-top: 10px;
+}
