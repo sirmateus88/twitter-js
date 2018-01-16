@@ -1,18 +1,15 @@
 const express = require( 'express' );
+const bodyParser = require('body-parser');
 const nunjucks = require( 'nunjucks' );
 const app = express(); // creates an instance of an express application
 const routes = require('./routes');
+
+app.use(bodyParser.urlencoded({ extended: false })); // for HTML form submits
+app.use(bodyParser.json()); // would be for AJAX requests
+
+
 app.use('/', routes);
 app.use(express.static('public'));
-
-const locals = {
-  title: 'An Example',
-  people: [
-      { name: 'Gandalf'},
-      { name: 'Frodo' },
-      { name: 'Hermione'}
-  ]
-};
 
 nunjucks.configure('views', {noCache: true});
 
